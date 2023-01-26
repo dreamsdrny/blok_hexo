@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2023/01/26/post-transistor/"/>
+      <url>/2023/01/26/post-transistor/</url>
+      
+        <content type="html"><![CDATA[<p>Doprax搭建免费的v2ray<br> 梅塔沃克  2023-01-13 PM  5704℃<br>Doprax<br>Doprax又是一款可以免费使用的容器类应用，相比于Replit，可以说是各有千秋，原因是Replit虽然速度挺快但是容易出现断开或者停止服务的情况；Doprax的免费用户可以实现永久在线，不过速度明显比repl要慢一些但却可以不限制流量，测试最高33M，youtube能跑1.3万，1080p不太卡。晚高峰速度470k，建议使用优选IP。</p><p>鉴于Doprax稳定的服务，还是有小伙伴愿意尝试的，搭建也非常简单，下面开始：<br>Doprax官网：<a href="https://www.doprax.com/r/proxy/">https://www.doprax.com/r/proxy/</a></p><p>搭建步骤<br>1、作者github： <a href="https://github.com/hiifeng/V2ray-for-Doprax%EF%BC%8C%E5%85%88%E7%82%B9%E4%B8%AAstar%E7%84%B6%E5%90%8Efork%E4%B8%80%E4%B8%8B%EF%BC%9B">https://github.com/hiifeng/V2ray-for-Doprax，先点个star然后fork一下；</a></p><p>2、按照作者提示，需要修改一下dockerfile中的UUID、VMESS_WSPATH、VLESS_WSPATH，UUID生成可用<a href="https://www.v2fly.org/awesome/tools.html">https://www.v2fly.org/awesome/tools.html</a> ，path随便写就行了；部署之后修改也OK！</p><p>3、Doprax创建一个新的app，名称随意，我使用site，然后在site的Main中，选择从github导入，我们选择这个分支，然后导入。<br>导入完成后，是这个样子的：</p><p>截屏2023-01-13 19.06.40.png</p><p>这个步骤也同样可以修改UUID、VMESS_WSPATH、VLESS_WSPATH，保存按钮比较难找哇；</p><p>4、接下来来到Deploy页面，点击启动,然后等待；我这里选择RAM: 256 MB CPU: 1 vCPU，速度稍慢了一些；完全启动后，我们会得到一个URL：<br>截屏2023-01-13 19.10.40.png</p><p>客户端设置方法<br>作者给出的设置参考图片：<br>截屏2023-01-13 19.18.06.png</p><p>我使用小火箭客户端的图片：<br>截屏2023-01-13 19.14.56.png</p><p>vless同理！</p><p>进阶教程<br>套cf cdn加速：<br>1、在app的设置页面，点击Edit domain，把域名解析到URL所在的IP，然后刷新验证，直到显示验证成功！<br>2、cf内开启小云朵。<br>3、在v2客户端当中，把地址和host都改成绑定的域名，然后测速，速度最高可提升10倍。当然了，这也要看网络情况；<br>我本地测速原来570kps，加速后6.7Mbps；<br>4、优选IP工具GitHub地址：<a href="https://github.com/XIU2/CloudflareSpeedTest/">https://github.com/XIU2/CloudflareSpeedTest/</a><br>cf的IP段：<a href="https://github.com/ip-scanner/cloudflare">https://github.com/ip-scanner/cloudflare</a></p><p>但是我发现一个问题，cf真的是用户太多了，连续测试了几个IP效果都不太好！就在刚刚，我又发现cf的小云朵开启以后，Doprax会检测到，庆幸的是，反代还可以用。</p><p>套aws cdn加速：<br>1、aws cdn套餐免费1T流量，所以自己的URL要注意保密，流量还是挺贵的！<br>2、在CloudFront创建cdn，等待地址生效；<br>3、在v2客户端当中，把地址和host都改成CloudFront分配的地址；<br>4、测试一下，效果也是一般般！<br>5、在<a href="https://d7uri8nf7uskq.cloudfront.net/tools/list-cloudfront-ips">https://d7uri8nf7uskq.cloudfront.net/tools/list-cloudfront-ips</a> 找一个非国内IP（或者是使用优选工具），修改客户端的地址（host伪装不修改，仍然使用CloudFront分配的地址），嘿！<br>6、fast测速120Mbps，8K也毫无压力呀！</p><p>问题是我白天测试的效果不敢再鼓吹了，录视频真翻车呀，晚高峰再测试然后更新视频吧。</p><p>参考资料：<a href="https://github.com/hiifeng/V2ray-for-Doprax">https://github.com/hiifeng/V2ray-for-Doprax</a></p><p>Doprax搭建v2的视频教程：<a href="https://www.youtube.com/watch?v=p76SC2GBT0s">https://www.youtube.com/watch?v=p76SC2GBT0s</a><br>对速度不满意吗？ 看看反代+优选IP教程 <a href="https://www.youtube.com/watch?v=4O5k5HVZB_o">https://www.youtube.com/watch?v=4O5k5HVZB_o</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>这是第一篇文章</title>
       <link href="/2023/01/25/post-third-block/"/>
       <url>/2023/01/25/post-third-block/</url>
@@ -57,6 +70,17 @@
     
     
     <entry>
+      <title>categories</title>
+      <link href="/ategories/index.html"/>
+      <url>/ategories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/css/universe.css"/>
       <url>/css/universe.css</url>
@@ -79,17 +103,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="/js/universe.js"/>
-      <url>/js/universe.js</url>
-      
-        <content type="html"><![CDATA[function dark() {window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var n,e,i,h,t=.05,s=document.getElementById("universe"),o=!0,a="180,184,240",r="226,225,142",d="226,225,224",c=[];function f(){n=window.innerWidth,e=window.innerHeight,i=.216*n,s.setAttribute("width",n),s.setAttribute("height",e)}function u(){h.clearRect(0,0,n,e);for(var t=c.length,i=0;i<t;i++){var s=c[i];s.move(),s.fadeIn(),s.fadeOut(),s.draw()}}function y(){this.reset=function(){this.giant=m(3),this.comet=!this.giant&&!o&&m(10),this.x=l(0,n-10),this.y=l(0,e),this.r=l(1.1,2.6),this.dx=l(t,6*t)+(this.comet+1-1)*t*l(50,120)+2*t,this.dy=-l(t,6*t)-(this.comet+1-1)*t*l(50,120),this.fadingOut=null,this.fadingIn=!0,this.opacity=0,this.opacityTresh=l(.2,1-.4*(this.comet+1-1)),this.do=l(5e-4,.002)+.001*(this.comet+1-1)},this.fadeIn=function(){this.fadingIn&&(this.fadingIn=!(this.opacity>this.opacityTresh),this.opacity+=this.do)},this.fadeOut=function(){this.fadingOut&&(this.fadingOut=!(this.opacity<0),this.opacity-=this.do/2,(this.x>n||this.y<0)&&(this.fadingOut=!1,this.reset()))},this.draw=function(){if(h.beginPath(),this.giant)h.fillStyle="rgba("+a+","+this.opacity+")",h.arc(this.x,this.y,2,0,2*Math.PI,!1);else if(this.comet){h.fillStyle="rgba("+d+","+this.opacity+")",h.arc(this.x,this.y,1.5,0,2*Math.PI,!1);for(var t=0;t<30;t++)h.fillStyle="rgba("+d+","+(this.opacity-this.opacity/20*t)+")",h.rect(this.x-this.dx/4*t,this.y-this.dy/4*t-2,2,2),h.fill()}else h.fillStyle="rgba("+r+","+this.opacity+")",h.rect(this.x,this.y,this.r,this.r);h.closePath(),h.fill()},this.move=function(){this.x+=this.dx,this.y+=this.dy,!1===this.fadingOut&&this.reset(),(this.x>n-n/4||this.y<0)&&(this.fadingOut=!0)},setTimeout(function(){o=!1},50)}function m(t){return Math.floor(1e3*Math.random())+1<10*t}function l(t,i){return Math.random()*(i-t)+t}f(),window.addEventListener("resize",f,!1),function(){h=s.getContext("2d");for(var t=0;t<i;t++)c[t]=new y,c[t].reset();u()}(),function t(){document.getElementsByTagName('html')[0].getAttribute('data-theme')=='dark'&&u(),window.requestAnimationFrame(t)}()};dark()]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>galleryGroup</title>
       <link href="/galleryGroup/index.html"/>
       <url>/galleryGroup/index.html</url>
@@ -101,11 +114,11 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title></title>
+      <link href="/js/universe.js"/>
+      <url>/js/universe.js</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[function dark() {window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var n,e,i,h,t=.05,s=document.getElementById("universe"),o=!0,a="180,184,240",r="226,225,142",d="226,225,224",c=[];function f(){n=window.innerWidth,e=window.innerHeight,i=.216*n,s.setAttribute("width",n),s.setAttribute("height",e)}function u(){h.clearRect(0,0,n,e);for(var t=c.length,i=0;i<t;i++){var s=c[i];s.move(),s.fadeIn(),s.fadeOut(),s.draw()}}function y(){this.reset=function(){this.giant=m(3),this.comet=!this.giant&&!o&&m(10),this.x=l(0,n-10),this.y=l(0,e),this.r=l(1.1,2.6),this.dx=l(t,6*t)+(this.comet+1-1)*t*l(50,120)+2*t,this.dy=-l(t,6*t)-(this.comet+1-1)*t*l(50,120),this.fadingOut=null,this.fadingIn=!0,this.opacity=0,this.opacityTresh=l(.2,1-.4*(this.comet+1-1)),this.do=l(5e-4,.002)+.001*(this.comet+1-1)},this.fadeIn=function(){this.fadingIn&&(this.fadingIn=!(this.opacity>this.opacityTresh),this.opacity+=this.do)},this.fadeOut=function(){this.fadingOut&&(this.fadingOut=!(this.opacity<0),this.opacity-=this.do/2,(this.x>n||this.y<0)&&(this.fadingOut=!1,this.reset()))},this.draw=function(){if(h.beginPath(),this.giant)h.fillStyle="rgba("+a+","+this.opacity+")",h.arc(this.x,this.y,2,0,2*Math.PI,!1);else if(this.comet){h.fillStyle="rgba("+d+","+this.opacity+")",h.arc(this.x,this.y,1.5,0,2*Math.PI,!1);for(var t=0;t<30;t++)h.fillStyle="rgba("+d+","+(this.opacity-this.opacity/20*t)+")",h.rect(this.x-this.dx/4*t,this.y-this.dy/4*t-2,2,2),h.fill()}else h.fillStyle="rgba("+r+","+this.opacity+")",h.rect(this.x,this.y,this.r,this.r);h.closePath(),h.fill()},this.move=function(){this.x+=this.dx,this.y+=this.dy,!1===this.fadingOut&&this.reset(),(this.x>n-n/4||this.y<0)&&(this.fadingOut=!0)},setTimeout(function(){o=!1},50)}function m(t){return Math.floor(1e3*Math.random())+1<10*t}function l(t,i){return Math.random()*(i-t)+t}f(),window.addEventListener("resize",f,!1),function(){h=s.getContext("2d");for(var t=0;t<i;t++)c[t]=new y,c[t].reset();u()}(),function t(){document.getElementsByTagName('html')[0].getAttribute('data-theme')=='dark'&&u(),window.requestAnimationFrame(t)}()};dark()]]></content>
       
     </entry>
     
@@ -123,9 +136,9 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -134,9 +147,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -157,6 +170,17 @@
     
     <entry>
       <title>[object Object]</title>
+      <link href="/scaffolds/post.html"/>
+      <url>/scaffolds/post.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[object Object]</title>
       <link href="/scaffolds/page.html"/>
       <url>/scaffolds/page.html</url>
       
@@ -167,9 +191,9 @@
     
     
     <entry>
-      <title>[object Object]</title>
-      <link href="/scaffolds/post.html"/>
-      <url>/scaffolds/post.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
