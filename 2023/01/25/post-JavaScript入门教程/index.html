@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>dreasmdrny | dreasmdrny</title><meta name="author" content="dreasddrny"><meta name="copyright" content="dreasddrny"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="title:JavaScript入门教程data: 2023-01-25updataed: 2023-01-28type: “tags”​— 文章目录01.JavaScript概述02.HTML中嵌入JavaScript03.JavaScript标识符和变量04.函数的定义和使用05.JS的数据类型1.number数据类型2.boolean数据类型3.String数据类型4.Object数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dreasmdrny">
+<meta property="og:url" content="https://blok-hexo.vercel.app/2023/01/25/post-JavaScript%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="dreasmdrny">
+<meta property="og:description" content="title:JavaScript入门教程data: 2023-01-25updataed: 2023-01-28type: “tags”​— 文章目录01.JavaScript概述02.HTML中嵌入JavaScript03.JavaScript标识符和变量04.函数的定义和使用05.JS的数据类型1.number数据类型2.boolean数据类型3.String数据类型4.Object数据类型">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-01-25T10:49:37.852Z">
+<meta property="article:modified_time" content="2023-01-29T02:55:41.344Z">
+<meta property="article:author" content="dreasddrny">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blok-hexo.vercel.app/2023/01/25/post-JavaScript%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":240},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'dreasmdrny',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-01-28 20:55:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="D://xk.PA.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-ar"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-mus"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-vi"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="dreasmdrny"><span class="site-name">dreasmdrny</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-ar"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-mus"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-vi"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-25T10:49:37.852Z" title="发表于 2023-01-25 04:49:37">2023-01-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-29T02:55:41.344Z" title="更新于 2023-01-28 20:55:41">2023-01-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+<p>title:JavaScript入门教程<br>data: 2023-01-25<br>updataed: 2023-01-28<br>type: “tags”<br>​—</p>
+<p>文章目录<br>01.JavaScript概述<br>02.HTML中嵌入JavaScript<br>03.JavaScript标识符和变量<br>04.函数的定义和使用<br>05.JS的数据类型<br>1.number数据类型<br>2.boolean数据类型<br>3.String数据类型<br>4.Object数据类型<br>06.在JS当中怎么定义类？怎么new对象？<br>07.null,undefined,NaN的区别</p>
+<p>01.JavaScript概述<br>1.什么是JavaScript?<br>JavaScript是运行在浏览器上的脚本语言。简称JS。<br>JavaScript是网景公司（NetScape)的 布兰登·艾奇 开发的，最初叫做LiveScript。LiveScript的出现让浏览器更加生动，使得页面更具有交互性。<br>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名的，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式和声明式（如函数式编程）风格。</p>
+<p>JavaScript在1995年由Netscape公司的Brendan Eich，在网景导航者浏览器上首次设计实现而成。因为Netscape与Sun合作，Netscape管理层希望它外观看起来像Java，因此取名为JavaScript。但实际上它的语法风格与Self及Scheme较为接近。</p>
+<p>JavaScript和java没有任何关系，只是语法类似。JavaScript运行在浏览器中，代码由浏览器解释后执行。而Java运行在JVM中。</p>
+<p>JavaScript的“目标程序”以普通文本形式保存，这种语言都叫做”脚本语言“。</p>
+<p>Java的目标程序已.class形式存在，不能使用文本编辑器打开，不是脚本语言。</p>
+<p>1998年网景公司由“美国在线”公司收购。</p>
+<p>王景公司最著名的就是“领航者浏览器”：Navigator浏览器。<br>LiveScript的出现，最初的时候是为Navigator浏览器量身定制一门语言，不支持其他浏览器。</p>
+<p>微软一看不行，研发了只支持IE浏览器的脚本语言。JScript。<br>在两者语言共存的时代，程序员需要写两套程序。这时一个叫做ECMA组织（欧洲计算机协会）根据JavaScript制定了ECMA-262标准，叫做ECMA-Script.</p>
+<p>JavaScript是一种属于网络的脚本语言,已经被广泛用于Web应用开发,常用来为网页添加各式各样的动态功能,为用户提供更流畅美观的浏览效果。通常JavaScript脚本是通过嵌入在HTML中来实现自身的功能的。<br>2.区分JSP和JS<br>JSP：JavaServer Pages（隶属Java）<br>JS: JavaScript.</p>
+<p>02.HTML中嵌入JavaScript<br>1.HTML嵌入JavaScript的第一种方式<br>JS是一门事件驱动型的编程语言，依靠时间去驱动，然后执行对应的程序。在JS中有很多事件，其中一个事件叫做：鼠标单击，单词：click。并且任何事件都会对应一个事件句柄叫做：onclick。【注意：事件和事件句柄的区别是：事件句柄是在事件单词前添加一个on】，而事件是以HTML标签的属性存在的。</p>
+<p>οnclick&#x3D;”js代码“，执行原理是什么？<br>页面打开的时候，js代码并不会执行，只是把这段代码注册到按钮的click事件上了。等这个按钮发生click之后，注册在onclick后面的js代码会被浏览器自动调用。</p>
+<p>*怎么使用JS代码弹出消息框。<br>在JS中有一个内置对象叫做window,全部小写，可以直接拿来使用，window代表的是浏览器对象。</p>
+<p>*window对象有一个函数叫做：alert，用法是：window.alert(“消息”）;这样就可以弹窗了。</p>
+<p>*JS的字符串可以使用双引号，也可以使用单引号。</p>
+<p>*JS的一条语句结束之后可以使用分号“；”,也可以不使用。</p>
+<p>举例：</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML中嵌入JavaScript的第一种方式</title>
+</head>
+<body>
+    <!--点击按钮弹出消息框-->
+    <input type="button" value="Hello" onclick="window.alert('Hello JavaScript!')"/>
+    <input type="button" value="Hello" onclick="window.alert('Hello XingKong!')"/>
+    <input type="button" value="Hello" onclick="window.alert ('Hello MengYangChen');
+                                                alert('Hello MengYang')
+                                                alert('Hello Meng')"/>
+<!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '113.34532,23.15624';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '2');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('pagination');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__bounceInUp');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --></body>
+</html>
+
+<p>2.HTML嵌入JavaScript的第二种方式<br>采用脚本块的方式：<br>暴露在脚本块中的程序，在页面打开的时候执行，并且遵守自上而下的顺序依次逐行执行。（不需要事件）</p>
+<p>JavaScript脚本块可以出现在任何位置，并且可以出现多次。<br>aler函数会阻塞整个HTML页面的加载。</p>
+<p>注释语法跟Java一样。</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML嵌入JavaScript的第二种方式</title>
+</head>
+<body>
+    <input type="button" value="我是一个。。"/>
+    <script type="text/javascript">
+        window.alert("hello world!");
+    </script>
+    <input type="button" value="我是一个按钮对象"/>
+</body>
+</html>
+
+<p>3.HTML嵌入JavaScript的第三种方式（推荐）<br>引入外部的js文件。</p>
+<p>引入js脚本文件的语句：<br>同一个脚本文件可以引入多次。<br>脚本文件直接写语句就好了。</p>
+<script type="text/javascript" src="路径和文件名“></script>
+
+<p>1<br>结束的&lt; &#x2F;script&gt;标签必须有，不能用反斜杠取代，引入文件时，其中间的代码不会执行。</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML中嵌入JavaScript的第三种方式</title>
+</head>
+<body>
+<script type="text/javascript" src="file/JS1.js"></script>
+</body>
+</html>
+
+<p>03.JavaScript标识符和变量<br>1.标识符的命名规则跟Java相同。</p>
+<p>2.变量：<br>声明变量：<br>var 变量名；</p>
+<p>赋值：<br>变量名&#x3D;值<br>javascript是一种弱类型语言，没有编译阶段，一个变量可以随意给其赋值。什么类型的都可以。</p>
+<p>变量没有手动赋值时，默认赋值为：undefined。<br>未声明变量使用会报错。</p>
+<p>2.局部变量和全局变量<br>类似C语言：</p>
+<p>全局变量在函数体之外声明。浏览器关闭的时候才会销毁。</p>
+<p>局部变量:在函数体内部声明。在函数体执行完后才销毁。</p>
+<p>3.当一个变量声明的时候没有使用var关键字，那么不管这个变量是在哪里声明的，都是全局变量。</p>
+<p>04.函数的定义和使用<br>1.JS中的函数怎么定义呢?<br>语法格式：<br>第一种方式：<br>function 函数名（形式参数列表）{<br>函数体；<br>}<br>第二种方式：<br>函数名&#x3D;function(形式参数列表）{<br>函数体；<br>}</p>
+<p>JS中的函数不需要指定返回值类型，返回什么类型的数据都没问题。</p>
+<p>函数的形参也不需要声明。<br>如：</p>
+<script>
+function sum (a,b){
+alert(a+b);
+}
+//或者
+sum=function(a,b){
+alert(a+b);
+}
+</script>
+
+
+<p>在调用函数的时候，如果没有传参数的值，或则传了一部分，剩下未传的参数默认赋值undefined。</p>
+<p>NaN是一个具体的值，该值表示不是数字。</p>
+<p>如果实参的数量大于形式参数的个数，默认只取前面两个数据。即没有数量限制（弱类型语言）。因此可以看出，JS不需要重载。<br>2.JS的函数不能重载。<br>如果出现同名函数，后面定义的函数会把前面定义的函数覆盖。<br>因此JS函数不能重名。分辨函数就是根据函数名来分辨。</p>
+<p>05.JS的数据类型<br>1.JS数据类型有:原始类型，引用类型。<br>原始类型：Undefined,Number,String,Boolean,Null<br>引用类型:Object以及子类。</p>
+<p>2.在ES6规范后，又基于以上6种类型添加了一种新的类型：Symbol。</p>
+<p>3.JS中有一个运算符叫做typeof,这个运算符可以在程序的运行阶段动态地获取变量的数据类型。</p>
+<p>typeof运算符的语法格式：<br>typeof 变量名</p>
+<p>typeof运算符的运算结果时以下6个字符串(全小写）结果之一：<br>“undefined”<br>“number”<br>“string”<br>“boolean”<br>“object”<br>“function”</p>
+<p>var d&#x3D;null;<br>alert(typeof d);&#x2F;&#x2F;“object”<br>比较字符串是否相等用双等号。</p>
+<p>4.Undefined数据类型只有一个值。这个值就是undefined，当一个变量没有手动赋值，系统默认赋值为undefined，当然也可以手动赋值为undefined。</p>
+<p>1.number数据类型<br>如：NaN，表示Not a Number不是一个数字，但是属于Number类型。</p>
+<p>Infinity，表示无穷大。</p>
+<p>0,-1,123,…小数，复数，无穷大都是属于number类型。</p>
+<p>除数为0时，结果为无穷大。</p>
+<p>函数isNaN（数据）：结果为true表示不是一个数字。<br>parseInt()函数：可以将字符串自动转换成数字。保留Int<br>parseFloat()函数：将字符串转换成数字。<br>Math.Ceil()函数：向上取整。2.1会变为3。</p>
+<p>2.boolean数据类型<br>在boolean类型中有一个Boolean（）函数，会将非boolean类型，转换成boolean类型。<br>当某个地方一定是boolean类型时，会自动转换成boolean类型。例如if后面的括号。<br>NaN,0,””,null,undefined会自动转换成false.</p>
+<p>3.String数据类型<br>1.在JS当中字符串可以使用单引号和双引号。<br>2.在JS当中，怎么创建字符串对象<br>第一种：var s&#x3D;“sag”;（小String，属于String类型）<br>第二种：var a2&#x3D; new String(“ab”);（大String，属于Object类型）<br>Sting是一个内置的类，可以直接使用。</p>
+<p>3.无论是小String还是大Sting字符串的长度相同。其中又一个length属性求长度(x.length)</p>
+<p>常用函数：<br>indexof: 获取指定字符串在当前字符串中第一次出现的索引<br>lastIndexof<br>replace<br>substr<br>substring<br>toLowerCase<br>toUpperCase<br>spilt 拆分字符串</p>
+<p>例如:alert(“fasdf”.indexof(“sdf”));</p>
+<p>replace只替换最前面一个子字符串<br>如果想全部替换需要使用正则表达式。</p>
+<p>substr和substring的区别。<br>substr(startIndex length)</p>
+<p>substring(startIndex endIndex)左闭右开。</p>
+<p>4.Object数据类型<br>1.首先Object类型是所有类型的超类，自定义的任何类型，默认继承Object。</p>
+<p>2.Object的prototype属性<br>作用：给类动态地扩展属性和函数。</p>
+<p>3.Object类的函数：</p>
+<p>toString()<br>valueof()<br>toLocalString()</p>
+<p>4.在JS中定义的类默认继承Object的属性和函数。</p>
+<p>06.在JS当中怎么定义类？怎么new对象？<br>1.定义类的语法：<br>第一种方式：<br>function 类名（形参）{<br>}<br>第二种方式：<br>类名 function (形参）{<br>}</p>
+<p>小朋友你是不是有很多问号？这不是函数的定义方式么？</p>
+<p>注意：用了new就是把他当作类看，如果没有new则是把它当作普通的函数看待。</p>
+<p>创建对象的语法：<br>new 构造函数名（实参）；&#x2F;&#x2F;构造函数和类名一致</p>
+<p>2.JS中类的定义，同时又是一个构造函数的定义</p>
+<p>在JS中类的定义和构造函数的定义是放在一起来完成的。</p>
+<p>如：<br>function User(a,b,c){<br>this.sno &#x3D;a;<br>this.sname&#x3D;b;<br>this.sage&#x3D;c;<br>}<br>&#x2F;&#x2F;a,b,c是形参，属于局部变量<br>&#x2F;&#x2F;声明属性（this 表示当前对象）<br>&#x2F;&#x2F;User类中有三个属性：sno&#x2F;sname&#x2F;sage</p>
+<p>3.创建对象：<br>var u1 &#x3D; new User(111,“lisi”,30)</p>
+<p>4.访问对象的属性：<br>alert(u1.sno)<br>alert(u1.sname)<br>alert(u1.sage)</p>
+<p>或者用另一种语法访问属性：<br>alert(u1[“sno”]);<br>alert(u1[“sage”]);</p>
+<p>定义类的另一种语法：<br>Emp &#x3D; function (ename ,sal)<br>this.ename &#x3D;ename;<br>this.sal&#x3D;sal;<br>}</p>
+<p>5.在类中如何定义函数:</p>
+<p>Product &#x3D; function(pno,pname,price){<br>&#x2F;&#x2F;属性<br>this.pno&#x3D;pno;<br>this.pname&#x3D;pname;<br>this.price&#x3D;price;<br>&#x2F;&#x2F;函数<br>this.getPrice &#x3D;function(){<br> return this.price<br>}<br>&#x2F;&#x2F;new对象<br>var pro &#x3D; new Product(111,”西瓜”,4.0)<br>&#x2F;&#x2F;调用函数<br>var pri &#x3D; pro.getPrice();<br>alert(pri);&#x2F;&#x2F;4.0</p>
+<p>6.通过prototype这个属性来动态扩展属性以及函数<br>&#x2F;&#x2F;给Product类扩展函数：<br>Product.prototype.getPname&#x3D;function(){<br>return this.pname;<br>}</p>
+<p>&#x2F;&#x2F;给String类扩展函数<br>String.prototype.getPname&#x3D;function(){<br>alert(“Hello”);<br>}</p>
+<p>7.JS与Java的对比：</p>
+<p>07.null,undefined,NaN的区别<br>1.数据类型不一致</p>
+<p>alert(typeof null);&#x2F;&#x2F;Object<br>alert(typeof NaN);&#x2F;&#x2F;number<br>alert(typeof undefined);&#x2F;&#x2F;undefined</p>
+<p>2.null和undefined可以等同</p>
+<p>alert(null&#x3D;NaN);&#x2F;&#x2F;false<br>alert(null&#x3D;undefined);&#x2F;&#x2F;true<br>alert(underfined&#x3D;NaN);false</p>
+<p>在JS当中有两个比较特殊的运算符：</p>
+<p>1.”&#x3D;&#x3D;” :等同运算符：只判断值是否相等（双等号）<br>2.”&#x3D; &#x3D; &#x3D;”：全等运算符：既判断值是否相等，又判断数据类型是否相等。（三等号）</p>
+<p>alert(11 &#x3D;&#x3D; ture);&#x2F;&#x2F;true<br>alert(11&#x3D;&#x3D;&#x3D; ture);&#x2F;&#x2F;false</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blok-hexo.vercel.app">dreasddrny</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blok-hexo.vercel.app/2023/01/25/post-JavaScript%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">https://blok-hexo.vercel.app/2023/01/25/post-JavaScript%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blok-hexo.vercel.app" target="_blank">dreasmdrny</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/25/post-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="计算机理论知识总结"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计算机理论知识总结</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/22/post-%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%9F%BA%E4%BA%8EDorprax%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E7%9A%84v2ray/" title="第一篇文章基于Dorprax搭建免费的v2ray"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">第一篇文章基于Dorprax搭建免费的v2ray</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="D://xk.PA.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">dreasddrny</div><div class="author-info__description">“演示博客”</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://dreamsdrny.github.io/blok_hexo/"><i class="fab fa-github"></i><span>/---前往小家</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dreamsdrny/blok_hexo" target="_blank" title=""><i class="fab fa-github"></i></a><a class="social-icon" href="https://1923696616@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By dreasddrny</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async src="https://npm.elemecdn.com/tzy-blog/lib/js/other/sakura.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="20" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body></html>
